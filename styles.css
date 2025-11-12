@@ -44,10 +44,12 @@ body{
 }
 .brand{ display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink);}
 .brand-logo{
-  width: 38px; height: 38px; display: grid; place-items: center;
-  border-radius: 50%; background: radial-gradient(120% 120% at 30% 20%, #fce9c8 0%, #caa25b 50%, #9a6f2b 100%);
+  width: 38px; height: 38px; 
+  border-radius: 50%;
   color: #fff; font-weight: 700;
   box-shadow: var(--shadow);
+  object-fit: cover;
+  display: block;
 }
 .brand-text{
   font-family: 'Playfair Display', serif; font-weight: 600; letter-spacing: .2px;
@@ -186,4 +188,3 @@ input:focus, select:focus, textarea:focus{ outline: 2px solid #f0d7a5; border-co
 @media (max-width: 900px){
   .contact-grid{ grid-template-columns: 1fr; }
 }
-
