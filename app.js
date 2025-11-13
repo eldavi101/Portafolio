@@ -48,4 +48,3 @@ sendBtn.addEventListener('click', ()=>{
   formMsg.textContent = '¡Gracias! Tu mensaje fue registrado. Te responderemos a la brevedad.';
   setTimeout(()=> formMsg.textContent = '', 5000);
 });
-
