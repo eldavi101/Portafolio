@@ -251,7 +251,10 @@
         <p>Cuéntanos tu idea y haremos magia.</p>
       </header>
 
-      <form class="form" action="#" method="post" onsubmit="return false;">
+      <form class="form" action="https://formsubmit.co/yourinvitation15@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nuevo mensaje de contacto - Beautiful Invitations">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
         <label>
           Nombre
           <input type="text" name="nombre" placeholder="Tu nombre" required>
@@ -274,8 +277,7 @@
           Mensaje
           <textarea name="mensaje" rows="5" placeholder="Cuéntanos fechas, colores, estilo…"></textarea>
         </label>
-        <button class="btn btn-primary" id="sendDemo">Enviar</button>
-        <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+        <button type="submit" class="btn btn-primary">Enviar</button>
       </form>
 
       <aside class="contact-info">
