@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Beautiful Invitations – Portafolio</title>
+  <title>Beautiful Invitations – Invitaciones de Lujo</title>
 
   <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -11,19 +11,19 @@
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon.png">
-  <meta name="description" content="Portafolio de invitaciones de lujo: quinceañeras, bodas, baby showers y graduaciones. Invitaciones digitales, PDF y físicas.">
+  <meta name="description" content="Invitaciones de lujo personalizadas para quinceañeras, bodas, baby showers y graduaciones.">
 </head>
 <body>
   <!-- Header / Nav -->
   <header class="site-header">
     <div class="container header-wrap">
-      <a class="brand" href="#home" aria-label="Ir al inicio">
+      <a class="brand" href="index.html" aria-label="Ir al inicio">
         <img class="brand-logo" src="Images/logo.png" alt="Beautiful Invitations Logo">
         <span class="brand-text">Beautiful Invitations</span>
       </a>
       <nav class="nav">
-        <a href="#portfolio">Portafolio</a>
-        <a href="#servicios">Servicios</a>
+        <a href="portafolio.html">Portafolio</a>
+        <a href="servicios.html">Servicios</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </div>
@@ -36,21 +36,79 @@
       <p class="hero-sub">
         Invitaciones personalizadas para <strong>Quinceañeras</strong>, <strong>Bodas</strong>, <strong>Baby Showers</strong> y <strong>Graduaciones</strong>.
       </p>
-      <a href="#portfolio" class="btn btn-primary">Ver Portafolio</a>
+      <a href="portafolio.html" class="btn btn-primary">Ver Portafolio</a>
     </div>
     <div class="hero-overlay" aria-hidden="true"></div>
   </section>
 
-  <!-- Filtros -->
-  <section id="portfolio" class="section hidden">
-    <div class="container">
+  <!-- Contacto -->
+  <section id="contacto" class="section">
+    <div class="container contact-grid">
       <header class="section-head">
-        <h2>Portafolio</h2>
-        <p>Explora por evento y tipo de invitación.</p>
+        <h2>Contacto</h2>
+        <p>Cuéntanos tu idea y haremos magia.</p>
       </header>
 
-      <div class="filters">
-        <div class="filter-group" role="group" aria-label="Filtrar por evento">
+      <form class="form" action="https://formsubmit.co/yourinvitation15@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nuevo mensaje de contacto - Beautiful Invitations">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <label>
+          Nombre
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+        </label>
+        <label>
+          Tipo de evento
+          <select name="evento" required>
+            <option value="">Selecciona…</option>
+            <option>Quinceañera</option>
+            <option>Boda</option>
+            <option>Baby Shower</option>
+            <option>Graduación</option>
+          </select>
+        </label>
+        <label>
+          Mensaje
+          <textarea name="mensaje" rows="5" placeholder="Cuéntanos fechas, colores, estilo…"></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+
+      <aside class="contact-info">
+        <h3>Atención directa</h3>
+        <ul>
+          <li>📞 786-992-6153</li>
+          <li>📞 786-507-9494</li>
+          <li>✉️ machindavid2@gmail.com</li>
+        </ul>
+        <div class="qr">
+          <img src="assets/qr-portfolio.png" alt="QR hacia el portafolio" />
+          <small>Escanéame para ver más trabajos</small>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> Beautiful Invitations. Because every celebration deserves a Beautiful Invitation.</p>
+      <a class="to-top" href="#home" aria-label="Volver arriba">↑</a>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Año dinámico en el footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
           <button class="chip is-active" data-filter-event="all">Todos</button>
           <button class="chip" data-filter-event="quince">Quinceañeras</button>
           <button class="chip" data-filter-event="bodas">Bodas</button>
