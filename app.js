@@ -1,6 +1,27 @@
 // Año dinámico en el footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Mostrar/ocultar secciones al hacer clic en el header
+const navLinks = document.querySelectorAll('.nav a');
+const portfolioSection = document.getElementById('portfolio');
+const serviciosSection = document.getElementById('servicios');
+const contactoSection = document.getElementById('contacto');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    const targetId = link.getAttribute('href').substring(1);
+    
+    // Ocultar todas las secciones excepto contacto (siempre visible)
+    if (targetId === 'portfolio') {
+      portfolioSection.classList.toggle('hidden');
+      serviciosSection.classList.add('hidden');
+    } else if (targetId === 'servicios') {
+      serviciosSection.classList.toggle('hidden');
+      portfolioSection.classList.add('hidden');
+    }
+  });
+});
+
 // Filtros por evento y tipo
 const gallery = document.getElementById('gallery');
 const chipsEvent = document.querySelectorAll('[data-filter-event]');
