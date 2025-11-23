@@ -49,65 +49,10 @@
         <p>Cuéntanos tu idea y haremos magia.</p>
       </header>
 
-      <form class="form" action="https://formsubmit.co/yourinvitation15@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Nuevo mensaje de contacto - Beautiful Invitations">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <label>
-          Nombre
-          <input type="text" name="nombre" placeholder="Tu nombre" required>
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" placeholder="tucorreo@ejemplo.com" required>
-        </label>
-        <label>
-          Tipo de evento
-          <select name="evento" required>
-            <option value="">Selecciona…</option>
-            <option>Quinceañera</option>
-            <option>Boda</option>
-            <option>Baby Shower</option>
-            <option>Graduación</option>
-          </select>
-        </label>
-        <label>
-          Mensaje
-          <textarea name="mensaje" rows="5" placeholder="Cuéntanos fechas, colores, estilo…"></textarea>
-        </label>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-      </form>
-
-      <aside class="contact-info">
-        <h3>Atención directa</h3>
-        <ul>
-          <li>📞 786-992-6153</li>
-          <li>📞 786-507-9494</li>
-          <li>✉️ machindavid2@gmail.com</li>
-        </ul>
-        <div class="qr">
-          <img src="assets/qr-portfolio.png" alt="QR hacia el portafolio" />
-          <small>Escanéame para ver más trabajos</small>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-wrap">
-      <p>© <span id="year"></span> Beautiful Invitations. Because every celebration deserves a Beautiful Invitation.</p>
-      <a class="to-top" href="#home" aria-label="Volver arriba">↑</a>
-    </div>
-  </footer>
-
-  <!-- JS -->
-  <script>
-    // Año dinámico en el footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+      <div class="filters">
+        <div class="filter-group" role="group" aria-label="Filtrar por evento">
+          <button class="chip is-active" data-filter-event="all">Todos</button>
+          <button class="chip" data-filter-event="quince">Quinceañeras</button>
           <button class="chip" data-filter-event="bodas">Bodas</button>
           <button class="chip" data-filter-event="baby">Baby Showers</button>
           <button class="chip" data-filter-event="graduaciones">Graduaciones</button>
