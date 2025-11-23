@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio – Beautiful Invitations</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon.png">
+  <meta name="description" content="Galería de invitaciones de lujo: quinceañeras, bodas, baby showers y graduaciones.">
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container header-wrap">
+      <a class="brand" href="index.html" aria-label="Ir al inicio">
+        <img class="brand-logo" src="Images/logo.png" alt="Beautiful Invitations Logo">
+        <span class="brand-text">Beautiful Invitations</span>
+      </a>
+      <nav class="nav">
+        <a href="portafolio.html">Portafolio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Portafolio -->
+  <section id="portfolio" class="section">
+    <div class="container">
+      <header class="section-head">
+        <h2>Portafolio</h2>
+        <p>Explora por evento y tipo de invitación.</p>
+      </header>
+
+      <div class="filters">
+        <div class="filter-group" role="group" aria-label="Filtrar por evento">
+          <button class="chip is-active" data-filter-event="all">Todos</button>
+          <button class="chip" data-filter-event="quince">Quinceañeras</button>
+          <button class="chip" data-filter-event="bodas">Bodas</button>
+          <button class="chip" data-filter-event="baby">Baby Showers</button>
+          <button class="chip" data-filter-event="graduaciones">Graduaciones</button>
+        </div>
+
+        <div class="filter-group" role="group" aria-label="Filtrar por tipo">
+          <button class="chip is-active" data-filter-type="all">Todos</button>
+          <button class="chip" data-filter-type="digital">Digital</button>
+          <button class="chip" data-filter-type="pdf">PDF</button>
+          <button class="chip" data-filter-type="fisicas">Físicas</button>
+        </div>
+      </div>
+
+      <!-- Galería -->
+      <div class="grid" id="gallery" aria-live="polite">
+        <!-- Quinceañeras -->
+        <article class="card" data-event="quince" data-type="digital">
+          <img src="assets/quince-digital-1.jpg" alt="Invitación digital para quinceañera con detalles dorados" loading="lazy">
+          <div class="card-body">
+            <h3>Quinceañera · Digital</h3>
+            <p>Animación sutil y música de fondo. Ideal para compartir por WhatsApp.</p>
+            <a href="index.html#contacto" class="btn btn-ghost">Solicitar similar</a>
+          </div>
+        </article>
+
+        <article class="card" data-event="quince" data-type="pdf">
+          <img src="assets/quince-pdf-1.jpg" alt="Plantilla PDF imprimible para quinceañera" loading="lazy">
+          <div class="card-body">
+            <h3>Quinceañera · PDF</h3>
+            <p>Imprimible en casa o imprenta. Tamaños A5/5x7".</p>
+            <a href="index.html#contacto" class="btn btn-ghost">Solicitar similar</a>
+          </div>
+        </article>
+
+        <article class="card" data-event="quince" data-type="fisicas">
+          <img src="assets/quince-fisica-1.jpg" alt="Invitación física con foil dorado y sobre perlado" loading="lazy">
+          <div class="card-body">
+            <h3>Quinceañera · Físicas</h3>
+            <p>Papel perlado, foil dorado y lazo de satén.</p>
+            <a href="index.html#contacto" class="btn btn-ghost">Solicitar similar</a>
+          </div>
+        </article>
+
+        <!-- Bodas -->
+        <article class="card" data-event="bodas" data-type="digital">
+          <img src="assets/boda-digital-1.jpg" alt="Invitación digital para boda estilo clásico" loading="lazy">
+          <div class="card-body">
+            <h3>Boda · Digital</h3>
+            <p>Tarjeta animada con enlace a mapa y RSVP.</p>
+            <a href="index.html#contacto" class="btn btn-ghost">Solicitar similar</a>
+          </div>
+        </article>
+
+        <article class="card" data-event="bodas" data-type="pdf">
+          <img src="assets/boda-pdf-1.jpg" alt="Invitación PDF de boda minimalista" loading="lazy">
+          <div class="card-body">
+            <h3>Boda · PDF</h3>
+            <p>Diseño minimal elegante, listo para imprimir.</p>
+            <a href="index.html#contacto" class="btn btn-ghost">Solicitar similar</a>
+          </div>
+        </article>
+
+        <article class="card" data-event="bodas" data-type="fisicas">
+          <img src="assets/boda-fisica-1.jpg" alt="Set físico de boda con relieve y cinta" loading="lazy">
+          <div class="card-body">
+            <h3>Boda · Físicas</h3>
+            <p>Set completo: invitación, RSVP y sobre forrado.</p>
+            <a href="index.html#contacto" class="btn btn-ghost">Solicitar similar</a>
+          </div>
+        </article>
+
+        <!-- Baby Showers -->
+        <article class="card" data-event="baby" data-type="digital">
+          <img src="assets/baby-digital-1.jpg" alt="Invitación digital baby shower temática ositos" loading="lazy">
+          <div class="card-body">
+            <h3>Baby Shower · Digital</h3>
+            <p>Animada, colores suaves y tipografía adorable.</p>
+            <a href="index.html#contacto" class="btn btn-ghost">Solicitar similar</a>
+          </div>
+        </article>
+
+        <article class="card" data-event="baby" data-type="pdf">
+          <img src="assets/baby-pdf-1.jpg" alt="PDF baby shower tonos pastel" loading="lazy">
+          <div class="card-body">
+            <h3>Baby Shower · PDF</h3>
+            <p>Formato 5x7" con lista de regalos y QR.</p>
+            <a href="index.html#contacto" class="btn btn-ghost">Solicitar similar</a>
+          </div>
+        </article>
+
+        <article class="card" data-event="baby" data-type="fisicas">
+          <img src="assets/baby-fisica-1.jpg" alt="Invitación física baby shower con relieve" loading="lazy">
+          <div class="card-body">
+            <h3>Baby Shower · Físicas</h3>
+            <p>Texturas suaves, stamping perlado.</p>
+            <a href="index.html#contacto" class="btn btn-ghost">Solicitar similar</a>
+          </div>
+        </article>
+
+        <!-- Graduaciones -->
+        <article class="card" data-event="graduaciones" data-type="digital">
+          <img src="assets/graduacion-digital-1.jpg" alt="Invitación digital para graduación con birrete" loading="lazy">
+          <div class="card-body">
+            <h3>Graduación · Digital</h3>
+            <p>Incluye fecha, sede y enlace a ubicación.</p>
+            <a href="index.html#contacto" class="btn btn-ghost">Solicitar similar</a>
+          </div>
+        </article>
+
+        <article class="card" data-event="graduaciones" data-type="pdf">
+          <img src="assets/graduacion-pdf-1.jpg" alt="PDF para graduación con tipografía académica" loading="lazy">
+          <div class="card-body">
+            <h3>Graduación · PDF</h3>
+            <p>Plantilla editable y lista para imprenta.</p>
+            <a href="index.html#contacto" class="btn btn-ghost">Solicitar similar</a>
+          </div>
+        </article>
+
+        <article class="card" data-event="graduaciones" data-type="fisicas">
+          <img src="assets/graduacion-fisica-1.jpg" alt="Invitación física para graduación con foil" loading="lazy">
+          <div class="card-body">
+            <h3>Graduación · Físicas</h3>
+            <p>Papel mate premium con foil dorado.</p>
+            <a href="index.html#contacto" class="btn btn-ghost">Solicitar similar</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> Beautiful Invitations. Because every celebration deserves a Beautiful Invitation.</p>
+      <a class="to-top" href="#portfolio" aria-label="Volver arriba">↑</a>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="app.js"></script>
+</body>
+</html>
