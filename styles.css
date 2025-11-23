@@ -153,6 +153,19 @@ body{
 .note{ color: var(--muted); margin: 10px 0 0; }
 
 /* Contacto */
+#contacto {
+  background: #ecc4b8;
+}
+
+#contacto .section-head h2 {
+  color: #8b2635;
+  font-family: 'Playfair Display', serif;
+}
+
+#contacto .section-head p {
+  color: #a83d4d;
+}
+
 .contact-grid{
   display: grid; gap: 28px;
   grid-template-columns: 1.2fr .8fr;
@@ -161,20 +174,20 @@ body{
   display: grid; gap: 12px; background:#fff; padding: 18px; border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
-.form label{ display:grid; gap: 6px; font-weight: 500; }
+.form label{ display:grid; gap: 6px; font-weight: 500; color: #8b2635; }
 input, select, textarea{
   width: 100%; padding: 12px 12px; border-radius: 12px; border: 1px solid #e7dccb;
   font: inherit; background: #fff9f1;
 }
-input:focus, select:focus, textarea:focus{ outline: 2px solid #f0d7a5; border-color: #e6c07a; }
+input:focus, select:focus, textarea:focus{ outline: 2px solid #c9496b; border-color: #b8395a; }
 .form-msg{ min-height: 22px; color: #2c6e49; font-weight: 500; }
 
 .contact-info{
   background:#fff; padding: 18px; border-radius: var(--radius); box-shadow: var(--shadow);
 }
-.contact-info h3{ margin-top: 0; font-family: 'Playfair Display', serif; }
+.contact-info h3{ margin-top: 0; font-family: 'Playfair Display', serif; color: #8b2635; }
 .contact-info ul{ list-style: none; padding: 0; margin: 0 0 12px; }
-.contact-info li{ margin: 6px 0; }
+.contact-info li{ margin: 6px 0; color: #a83d4d; }
 .qr{ display:grid; place-items:center; gap:8px; }
 .qr img{ width: 130px; height: 130px; object-fit: contain; border-radius: 12px; border: 6px solid #fff; box-shadow: var(--shadow); }
 
