@@ -1,0 +1,52 @@
+{
+  "quinces": [
+    {
+      "title": "Invitación Elegant Rose",
+      "type": "image",
+      "path": "Quinces/ejemplo1.jpg",
+      "description": "Invitación digital elegante"
+    },
+    {
+      "title": "Video Invitación Dorado",
+      "type": "video",
+      "path": "Quinces/ejemplo-video.mp4",
+      "description": "Video invitación animada"
+    }
+  ],
+  "bodas": [
+    {
+      "title": "Invitación Clásica",
+      "type": "image",
+      "path": "Bodas/ejemplo1.jpg",
+      "description": "Diseño clásico y elegante"
+    },
+    {
+      "title": "Invitación PDF Imprimible",
+      "type": "pdf",
+      "path": "Bodas/invitacion.pdf",
+      "description": "Formato imprimible de alta calidad"
+    }
+  ],
+  "baby": [
+    {
+      "title": "Baby Shower Dulce",
+      "type": "image",
+      "path": "Baby Showers/ejemplo1.jpg",
+      "description": "Diseño tierno y colorido"
+    }
+  ],
+  "graduaciones": [
+    {
+      "title": "Graduación Universitaria",
+      "type": "image",
+      "path": "Graduaciones/ejemplo1.jpg",
+      "description": "Diseño profesional y moderno"
+    },
+    {
+      "title": "Sitio Web Interactivo",
+      "type": "link",
+      "path": "https://ejemplo.com/graduacion",
+      "description": "Invitación web interactiva"
+    }
+  ]
+}

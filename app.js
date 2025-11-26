@@ -1,44 +1,131 @@
 // Año dinámico en el footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Filtros por evento y tipo (solo para portafolio.html)
+// Sistema de portafolio dinámico
 const gallery = document.getElementById('gallery');
 
 if (gallery) {
-  const chipsEvent = document.querySelectorAll('[data-filter-event]');
-  const chipsType  = document.querySelectorAll('[data-filter-type]');
+  let portfolioData = {};
+  let activeCategory = 'all';
 
-  let activeEvent = 'all';
-  let activeType  = 'all';
+  // Cargar datos del JSON
+  fetch('portfolio-data.json')
+    .then(response => response.json())
+    .then(data => {
+      portfolioData = data;
+      renderGallery('all');
+    })
+    .catch(error => {
+      console.error('Error cargando portfolio:', error);
+      gallery.innerHTML = '<p class="error-message">Error al cargar el portafolio. Por favor, intenta más tarde.</p>';
+    });
 
-  function applyFilters(){
-    const cards = gallery.querySelectorAll('.card');
-    cards.forEach(card=>{
-      const ev  = card.dataset.event;
-      const typ = card.dataset.type;
+  // Función para renderizar la galería
+  function renderGallery(category) {
+    gallery.innerHTML = '';
+    
+    let itemsToShow = [];
+    
+    if (category === 'all') {
+      // Mostrar todos los items de todas las categorías
+      Object.values(portfolioData).forEach(categoryItems => {
+        itemsToShow = itemsToShow.concat(categoryItems);
+      });
+    } else {
+      // Mostrar solo items de la categoría seleccionada
+      itemsToShow = portfolioData[category] || [];
+    }
 
-      const matchEvent = (activeEvent === 'all' || ev === activeEvent);
-      const matchType  = (activeType  === 'all' || typ === activeType);
+    if (itemsToShow.length === 0) {
+      gallery.innerHTML = '<p class="empty-message">No hay trabajos en esta categoría aún. ¡Pronto agregaremos más!</p>';
+      return;
+    }
 
-      card.style.display = (matchEvent && matchType) ? '' : 'none';
+    // Crear tarjetas para cada item
+    itemsToShow.forEach(item => {
+      const card = createCard(item);
+      gallery.appendChild(card);
     });
   }
 
-  chipsEvent.forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      chipsEvent.forEach(b=>b.classList.remove('is-active'));
-      btn.classList.add('is-active');
-      activeEvent = btn.dataset.filterEvent;
-      applyFilters();
-    });
-  });
+  // Función para crear una tarjeta según el tipo
+  function createCard(item) {
+    const card = document.createElement('div');
+    card.className = 'card';
 
-  chipsType.forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      chipsType.forEach(b=>b.classList.remove('is-active'));
+    let content = '';
+
+    switch(item.type) {
+      case 'image':
+        content = `
+          <img src="${item.path}" alt="${item.title}" loading="lazy">
+          <div class="card-body">
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+            <span class="card-badge">📷 Imagen</span>
+          </div>
+        `;
+        break;
+
+      case 'video':
+        content = `
+          <video controls poster="${item.thumbnail || ''}" preload="metadata">
+            <source src="${item.path}" type="video/mp4">
+            Tu navegador no soporta video.
+          </video>
+          <div class="card-body">
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+            <span class="card-badge">🎬 Video</span>
+          </div>
+        `;
+        break;
+
+      case 'pdf':
+        content = `
+          <div class="pdf-preview">
+            <div class="pdf-icon">📄</div>
+          </div>
+          <div class="card-body">
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+            <a href="${item.path}" target="_blank" class="btn btn-primary btn-small">Abrir PDF</a>
+            <span class="card-badge">📄 PDF</span>
+          </div>
+        `;
+        break;
+
+      case 'link':
+        content = `
+          <div class="link-preview">
+            <div class="link-icon">🔗</div>
+          </div>
+          <div class="card-body">
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+            <a href="${item.path}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-small">Visitar sitio</a>
+            <span class="card-badge">🔗 Enlace</span>
+          </div>
+        `;
+        break;
+    }
+
+    card.innerHTML = content;
+    return card;
+  }
+
+  // Event listeners para los botones de filtro
+  const filterButtons = document.querySelectorAll('[data-filter-event]');
+  
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Actualizar botón activo
+      filterButtons.forEach(b => b.classList.remove('is-active'));
       btn.classList.add('is-active');
-      activeType = btn.dataset.filterType;
-      applyFilters();
+      
+      // Obtener categoría y renderizar
+      activeCategory = btn.dataset.filterEvent;
+      renderGallery(activeCategory);
     });
   });
 }
