@@ -133,25 +133,6 @@ body{
 }
 .card-body p{ margin: 0 0 12px; color: var(--muted); }
 
-/* Servicios */
-.services{
-  display: grid; gap: 18px;
-  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-  margin-bottom: 20px;
-}
-.service-item{
-  background: #fff; padding: 18px; border-radius: var(--radius); box-shadow: var(--shadow);
-  border-left: 4px solid var(--gold-soft);
-}
-.table-wrap{ overflow-x:auto; margin-top: 8px; }
-.compare{
-  width: 100%; border-collapse: collapse; min-width: 680px;
-  background: #fff; box-shadow: var(--shadow); border-radius: var(--radius); overflow:hidden;
-}
-.compare th, .compare td{ padding: 14px 16px; text-align: left; border-bottom: 1px solid #f0e7d7; }
-.compare thead th{ background: #f8f0e0; font-weight: 600; }
-.note{ color: var(--muted); margin: 10px 0 0; }
-
 /* Contacto */
 #contacto {
   background: #ecc4b8;
