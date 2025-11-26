@@ -92,6 +92,19 @@ body{
   opacity: .25; pointer-events: none;
 }
 
+/* Portafolio */
+#portfolio {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('Images/Portafolio gemini.png') center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+#portfolio .section-head h2,
+#portfolio .section-head p {
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
 /* Chips & buttons */
 .filters{ display: grid; gap: 12px; margin: 18px 0 28px; }
 .filter-group{ display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
