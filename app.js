@@ -111,6 +111,17 @@ if (gallery) {
     }
 
     card.innerHTML = content;
+    
+    // Agregar evento click para abrir modal
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
+      // Si se hizo clic en un enlace o botón, no abrir modal
+      if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+        return;
+      }
+      openModal(item);
+    });
+    
     return card;
   }
 
@@ -127,5 +138,77 @@ if (gallery) {
       activeCategory = btn.dataset.filterEvent;
       renderGallery(activeCategory);
     });
+  });
+
+  // Sistema de Modal
+  const modal = document.getElementById('modal');
+  const modalBody = document.getElementById('modal-body');
+  const modalClose = document.querySelector('.modal-close');
+  const modalOverlay = document.querySelector('.modal-overlay');
+
+  function openModal(item) {
+    let modalContent = '';
+
+    switch(item.type) {
+      case 'image':
+        modalContent = `
+          <img src="${item.path}" alt="${item.title}">
+        `;
+        break;
+
+      case 'video':
+        modalContent = `
+          <video controls autoplay style="max-width: 90vw; max-height: 85vh;">
+            <source src="${item.path}" type="video/mp4">
+            Tu navegador no soporta video.
+          </video>
+        `;
+        break;
+
+      case 'pdf':
+        modalContent = `
+          <iframe src="${item.path}" style="width: 90vw; height: 85vh;"></iframe>
+        `;
+        break;
+
+      case 'link':
+        modalContent = `
+          <div class="modal-info">
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+            <a href="${item.path}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visitar sitio web</a>
+          </div>
+        `;
+        break;
+    }
+
+    modalBody.innerHTML = modalContent;
+    modal.classList.add('is-active');
+    document.body.style.overflow = 'hidden'; // Prevenir scroll
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-active');
+    document.body.style.overflow = ''; // Restaurar scroll
+    
+    // Limpiar contenido después de la animación
+    setTimeout(() => {
+      modalBody.innerHTML = '';
+    }, 300);
+  }
+
+  if (modalClose) {
+    modalClose.addEventListener('click', closeModal);
+  }
+
+  if (modalOverlay) {
+    modalOverlay.addEventListener('click', closeModal);
+  }
+
+  // Cerrar modal con tecla ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+      closeModal();
+    }
   });
 }
