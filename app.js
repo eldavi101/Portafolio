@@ -1,7 +1,7 @@
 // Año dinámico en el footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Sistema de portafolio dinámico
+// Sistema de galería dinámico
 const gallery = document.getElementById('gallery');
 
 if (gallery) {
@@ -16,8 +16,8 @@ if (gallery) {
       renderGallery('all');
     })
     .catch(error => {
-      console.error('Error cargando portfolio:', error);
-      gallery.innerHTML = '<p class="error-message">Error al cargar el portafolio. Por favor, intenta más tarde.</p>';
+      console.error('Error cargando galería:', error);
+      gallery.innerHTML = '<p class="error-message">Error al cargar la galería. Por favor, intenta más tarde.</p>';
     });
 
   // Función para renderizar la galería

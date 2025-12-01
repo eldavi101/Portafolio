@@ -1,4 +1,4 @@
-# Cómo Agregar Nuevos Trabajos al Portafolio
+# Cómo Agregar Nuevos Trabajos a la Galería
 
 ## Pasos para agregar un nuevo trabajo:
 
@@ -91,7 +91,7 @@ Si quieres agregar 2 imágenes a Quinces y 1 video a Bodas, el archivo `portfoli
 Después de actualizar el archivo JSON:
 ```bash
 git add .
-git commit -m "Agregar nuevos trabajos al portafolio"
+git commit -m "Agregar nuevos trabajos a la galería"
 git push
 ```
 
