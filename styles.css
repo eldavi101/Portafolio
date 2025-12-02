@@ -63,6 +63,37 @@ body{
 }
 .nav a:hover{ background: #efe9de; }
 
+/* Language Toggle */
+.lang-toggle {
+  margin-left: 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(90deg, #b98a37, #d3b06c);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.lang-toggle:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.lang-flag {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.lang-text {
+  font-weight: 600;
+}
+
 /* Hero */
 .hero{
   position: relative; min-height: 72vh; display: grid; place-items: center;

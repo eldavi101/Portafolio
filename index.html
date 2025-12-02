@@ -22,8 +22,12 @@
         <span class="brand-text">Beautiful Invitations</span>
       </a>
       <nav class="nav">
-        <a href="galeria.html" target="_blank">Galería</a>
-        <a href="#contacto">Contacto</a>
+        <a href="galeria.html" target="_blank" data-i18n="nav.gallery">Galería</a>
+        <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+        <button id="langToggle" class="lang-toggle" aria-label="Change language">
+          <span class="lang-flag">🇺🇸</span>
+          <span class="lang-text">EN</span>
+        </button>
       </nav>
     </div>
   </header>
@@ -32,10 +36,10 @@
   <section id="home" class="hero">
     <div class="container hero-inner">
       <h1 class="hero-title">Luxury Event Designs</h1>
-      <p class="hero-sub">
+      <p class="hero-sub" data-i18n-html="hero.subtitle">
         Invitaciones personalizadas para <strong>Quinces</strong>, <strong>Bodas</strong>, <strong>Baby Showers</strong>, <strong>Graduaciones y mas</strong>.
       </p>
-      <a href="galeria.html" target="_blank" class="btn btn-primary">Ver Galería</a>
+      <a href="galeria.html" target="_blank" class="btn btn-primary" data-i18n="hero.cta">Ver Galería</a>
     </div>
     <div class="hero-overlay" aria-hidden="true"></div>
   </section>
@@ -44,8 +48,8 @@
   <section id="contacto" class="section">
     <div class="container contact-grid">
       <header class="section-head">
-        <h2>Contacto</h2>
-        <p>Cuéntanos tu idea y haremos magia.</p>
+        <h2 data-i18n="contact.title">Contacto</h2>
+        <p data-i18n="contact.subtitle">Cuéntanos tu idea y haremos magia.</p>
       </header>
 
       <form class="form" action="https://formsubmit.co/yourinvitation15@gmail.com" method="POST">
@@ -53,32 +57,32 @@
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
         <label>
-          Nombre
-          <input type="text" name="nombre" placeholder="Tu nombre" required>
+          <span data-i18n="contact.name">Nombre</span>
+          <input type="text" name="nombre" data-i18n-placeholder="contact.namePlaceholder" placeholder="Tu nombre" required>
         </label>
         <label>
-          Email
-          <input type="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+          <span data-i18n="contact.email">Email</span>
+          <input type="email" name="email" data-i18n-placeholder="contact.emailPlaceholder" placeholder="tucorreo@ejemplo.com" required>
         </label>
         <label>
-          Tipo de evento
+          <span data-i18n="contact.event">Tipo de evento</span>
           <select name="evento" required>
-            <option value="">Selecciona…</option>
-            <option>Quinces</option>
-            <option>Boda</option>
-            <option>Baby Shower</option>
-            <option>Graduación</option>
+            <option value="" data-i18n="contact.eventPlaceholder">Selecciona…</option>
+            <option data-i18n="contact.quinces">Quinces</option>
+            <option data-i18n="contact.wedding">Boda</option>
+            <option data-i18n="contact.baby">Baby Shower</option>
+            <option data-i18n="contact.graduation">Graduación</option>
           </select>
         </label>
         <label>
-          Mensaje
-          <textarea name="mensaje" rows="5" placeholder="Cuéntanos fechas, colores, estilo…"></textarea>
+          <span data-i18n="contact.message">Mensaje</span>
+          <textarea name="mensaje" rows="5" data-i18n-placeholder="contact.messagePlaceholder" placeholder="Cuéntanos fechas, colores, estilo…"></textarea>
         </label>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="submit" class="btn btn-primary" data-i18n="contact.send">Enviar</button>
       </form>
 
       <aside class="contact-info">
-        <h3>Atención directa</h3>
+        <h3 data-i18n="contact.directContact">Atención directa</h3>
         <ul>
           <li>📞 <a href="tel:786-992-6153">786-992-6153</a></li>
           <li>📞 <a href="tel:786-507-9494">786-507-9494</a></li>
@@ -91,7 +95,7 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-wrap">
-      <p>© <span id="year"></span> Beautiful Invitations. Because every celebration deserves a Beautiful Invitation.</p>
+      <p>© <span id="year"></span> Beautiful Invitations. <span data-i18n="footer.tagline">Because every celebration deserves a Beautiful Invitation.</span></p>
       <a class="to-top" href="#home" aria-label="Volver arriba">↑</a>
     </div>
   </footer>

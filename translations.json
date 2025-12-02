@@ -1,0 +1,112 @@
+{
+  "en": {
+    "nav": {
+      "gallery": "Gallery",
+      "contact": "Contact"
+    },
+    "hero": {
+      "title": "Beautiful Invitations",
+      "subtitle": "Custom invitations for <strong>Quinceañeras</strong>, <strong>Weddings</strong>, <strong>Baby Showers</strong>, <strong>Graduations and more</strong>.",
+      "cta": "View Gallery"
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Tell us about your celebration and we'll create a unique design for you.",
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone",
+      "phonePlaceholder": "Your phone number",
+      "event": "Type of Event",
+      "eventPlaceholder": "Select an option",
+      "quinces": "Quinceañera",
+      "wedding": "Wedding",
+      "baby": "Baby Shower",
+      "graduation": "Graduation",
+      "other": "Other",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about dates, colors, style…",
+      "send": "Send",
+      "directContact": "Direct Contact"
+    },
+    "gallery": {
+      "title": "Gallery",
+      "subtitle": "Explore by event and invitation type.",
+      "all": "All",
+      "quinces": "Quinceañeras",
+      "weddings": "Weddings",
+      "babyShowers": "Baby Showers",
+      "graduations": "Graduations",
+      "loading": "Loading gallery...",
+      "empty": "No works in this category yet. We'll add more soon!",
+      "error": "Error loading gallery. Please try again later.",
+      "badges": {
+        "image": "📷 Image",
+        "video": "🎬 Video",
+        "pdf": "📄 PDF",
+        "link": "🔗 Link"
+      },
+      "openPdf": "Open PDF",
+      "visitSite": "Visit site"
+    },
+    "footer": {
+      "tagline": "Because every celebration deserves a Beautiful Invitation."
+    }
+  },
+  "es": {
+    "nav": {
+      "gallery": "Galería",
+      "contact": "Contacto"
+    },
+    "hero": {
+      "title": "Beautiful Invitations",
+      "subtitle": "Invitaciones personalizadas para <strong>Quinces</strong>, <strong>Bodas</strong>, <strong>Baby Showers</strong>, <strong>Graduaciones y mas</strong>.",
+      "cta": "Ver Galería"
+    },
+    "contact": {
+      "title": "Contacto",
+      "subtitle": "Cuéntanos sobre tu celebración y crearemos un diseño único para ti.",
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre completo",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "tu@email.com",
+      "phone": "Teléfono",
+      "phonePlaceholder": "Tu número de teléfono",
+      "event": "Tipo de Evento",
+      "eventPlaceholder": "Selecciona una opción",
+      "quinces": "Quinces",
+      "wedding": "Boda",
+      "baby": "Baby Shower",
+      "graduation": "Graduación",
+      "other": "Otro",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntanos fechas, colores, estilo…",
+      "send": "Enviar",
+      "directContact": "Atención directa"
+    },
+    "gallery": {
+      "title": "Galería",
+      "subtitle": "Explora por evento y tipo de invitación.",
+      "all": "Todos",
+      "quinces": "Quinces",
+      "weddings": "Bodas",
+      "babyShowers": "Baby Showers",
+      "graduations": "Graduaciones",
+      "loading": "Cargando galería...",
+      "empty": "No hay trabajos en esta categoría aún. ¡Pronto agregaremos más!",
+      "error": "Error al cargar la galería. Por favor, intenta más tarde.",
+      "badges": {
+        "image": "📷 Imagen",
+        "video": "🎬 Video",
+        "pdf": "📄 PDF",
+        "link": "🔗 Enlace"
+      },
+      "openPdf": "Abrir PDF",
+      "visitSite": "Visitar sitio"
+    },
+    "footer": {
+      "tagline": "Because every celebration deserves a Beautiful Invitation."
+    }
+  }
+}

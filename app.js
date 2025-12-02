@@ -1,6 +1,91 @@
 // Año dinámico en el footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Sistema de traducción i18n
+let translations = {};
+let currentLang = localStorage.getItem('language') || 'en'; // Inglés por defecto
+
+// Cargar traducciones
+fetch('translations.json')
+  .then(response => response.json())
+  .then(data => {
+    translations = data;
+    applyTranslations(currentLang);
+    updateLangButton(currentLang);
+  })
+  .catch(error => console.error('Error loading translations:', error));
+
+// Aplicar traducciones
+function applyTranslations(lang) {
+  // Traducir elementos con data-i18n (texto simple)
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    const translation = getNestedTranslation(translations[lang], key);
+    if (translation) {
+      element.textContent = translation;
+    }
+  });
+
+  // Traducir elementos con data-i18n-html (HTML)
+  document.querySelectorAll('[data-i18n-html]').forEach(element => {
+    const key = element.getAttribute('data-i18n-html');
+    const translation = getNestedTranslation(translations[lang], key);
+    if (translation) {
+      element.innerHTML = translation;
+    }
+  });
+
+  // Traducir placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+    const key = element.getAttribute('data-i18n-placeholder');
+    const translation = getNestedTranslation(translations[lang], key);
+    if (translation) {
+      element.placeholder = translation;
+    }
+  });
+
+  // Actualizar atributo lang del HTML
+  document.documentElement.lang = lang;
+  localStorage.setItem('language', lang);
+}
+
+// Obtener traducción anidada (ej: "nav.gallery")
+function getNestedTranslation(obj, path) {
+  return path.split('.').reduce((current, key) => current?.[key], obj);
+}
+
+// Actualizar botón de idioma
+function updateLangButton(lang) {
+  const langToggle = document.getElementById('langToggle');
+  if (langToggle) {
+    const flag = langToggle.querySelector('.lang-flag');
+    const text = langToggle.querySelector('.lang-text');
+    
+    if (lang === 'en') {
+      flag.textContent = '🇺🇸';
+      text.textContent = 'EN';
+    } else {
+      flag.textContent = '🇪🇸';
+      text.textContent = 'ES';
+    }
+  }
+}
+
+// Toggle de idioma
+const langToggle = document.getElementById('langToggle');
+if (langToggle) {
+  langToggle.addEventListener('click', () => {
+    currentLang = currentLang === 'en' ? 'es' : 'en';
+    applyTranslations(currentLang);
+    updateLangButton(currentLang);
+    
+    // Re-renderizar galería si existe
+    if (gallery && typeof renderGallery === 'function') {
+      renderGallery(activeCategory || 'all');
+    }
+  });
+}
+
 // Sistema de galería dinámico
 const gallery = document.getElementById('gallery');
 
@@ -17,7 +102,8 @@ if (gallery) {
     })
     .catch(error => {
       console.error('Error cargando galería:', error);
-      gallery.innerHTML = '<p class="error-message">Error al cargar la galería. Por favor, intenta más tarde.</p>';
+      const errorMsg = getNestedTranslation(translations[currentLang], 'gallery.error') || 'Error al cargar la galería. Por favor, intenta más tarde.';
+      gallery.innerHTML = `<p class="error-message">${errorMsg}</p>`;
     });
 
   // Función para renderizar la galería
@@ -37,7 +123,8 @@ if (gallery) {
     }
 
     if (itemsToShow.length === 0) {
-      gallery.innerHTML = '<p class="empty-message">No hay trabajos en esta categoría aún. ¡Pronto agregaremos más!</p>';
+      const emptyMsg = getNestedTranslation(translations[currentLang], 'gallery.empty') || 'No hay trabajos en esta categoría aún. ¡Pronto agregaremos más!';
+      gallery.innerHTML = `<p class="empty-message">${emptyMsg}</p>`;
       return;
     }
 
@@ -53,6 +140,14 @@ if (gallery) {
     const card = document.createElement('div');
     card.className = 'card';
 
+    // Obtener traducciones de badges
+    const badgeImage = getNestedTranslation(translations[currentLang], 'gallery.badges.image') || '📷 Imagen';
+    const badgeVideo = getNestedTranslation(translations[currentLang], 'gallery.badges.video') || '🎬 Video';
+    const badgePdf = getNestedTranslation(translations[currentLang], 'gallery.badges.pdf') || '📄 PDF';
+    const badgeLink = getNestedTranslation(translations[currentLang], 'gallery.badges.link') || '🔗 Enlace';
+    const openPdf = getNestedTranslation(translations[currentLang], 'gallery.openPdf') || 'Abrir PDF';
+    const visitSite = getNestedTranslation(translations[currentLang], 'gallery.visitSite') || 'Visitar sitio';
+
     let content = '';
 
     switch(item.type) {
@@ -62,7 +157,7 @@ if (gallery) {
           <div class="card-body">
             <h3>${item.title}</h3>
             <p>${item.description}</p>
-            <span class="card-badge">📷 Imagen</span>
+            <span class="card-badge">${badgeImage}</span>
           </div>
         `;
         break;
@@ -76,7 +171,7 @@ if (gallery) {
           <div class="card-body">
             <h3>${item.title}</h3>
             <p>${item.description}</p>
-            <span class="card-badge">🎬 Video</span>
+            <span class="card-badge">${badgeVideo}</span>
           </div>
         `;
         break;
@@ -89,8 +184,8 @@ if (gallery) {
           <div class="card-body">
             <h3>${item.title}</h3>
             <p>${item.description}</p>
-            <a href="${item.path}" target="_blank" class="btn btn-primary btn-small">Abrir PDF</a>
-            <span class="card-badge">📄 PDF</span>
+            <a href="${item.path}" target="_blank" class="btn btn-primary btn-small">${openPdf}</a>
+            <span class="card-badge">${badgePdf}</span>
           </div>
         `;
         break;
@@ -103,8 +198,8 @@ if (gallery) {
           <div class="card-body">
             <h3>${item.title}</h3>
             <p>${item.description}</p>
-            <a href="${item.path}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-small">Visitar sitio</a>
-            <span class="card-badge">🔗 Enlace</span>
+            <a href="${item.path}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-small">${visitSite}</a>
+            <span class="card-badge">${badgeLink}</span>
           </div>
         `;
         break;

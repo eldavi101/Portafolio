@@ -22,8 +22,12 @@
         <span class="brand-text">Beautiful Invitations</span>
       </a>
       <nav class="nav">
-        <a href="galeria.html">Galería</a>
-        <a href="index.html#contacto">Contacto</a>
+        <a href="galeria.html" data-i18n="nav.gallery">Galería</a>
+        <a href="index.html#contacto" data-i18n="nav.contact">Contacto</a>
+        <button id="langToggle" class="lang-toggle" aria-label="Change language">
+          <span class="lang-flag">🇺🇸</span>
+          <span class="lang-text">EN</span>
+        </button>
       </nav>
     </div>
   </header>
@@ -32,22 +36,22 @@
   <section id="portfolio" class="section">
     <div class="container">
       <header class="section-head">
-        <h2>Galería</h2>
-        <p>Explora por evento y tipo de invitación.</p>
+        <h2 data-i18n="gallery.title">Galería</h2>
+        <p data-i18n="gallery.subtitle">Explora por evento y tipo de invitación.</p>
       </header>
 
       <div class="filters">
         <div class="filter-group" role="group" aria-label="Filtrar por evento">
-          <button class="chip is-active" data-filter-event="all">Todos</button>
-          <button class="chip" data-filter-event="quinces">Quinces</button>
-          <button class="chip" data-filter-event="bodas">Bodas</button>
-          <button class="chip" data-filter-event="baby">Baby Showers</button>
-          <button class="chip" data-filter-event="graduaciones">Graduaciones</button>
+          <button class="chip is-active" data-filter-event="all" data-i18n="gallery.all">Todos</button>
+          <button class="chip" data-filter-event="quinces" data-i18n="gallery.quinces">Quinces</button>
+          <button class="chip" data-filter-event="bodas" data-i18n="gallery.weddings">Bodas</button>
+          <button class="chip" data-filter-event="baby" data-i18n="gallery.babyShowers">Baby Showers</button>
+          <button class="chip" data-filter-event="graduaciones" data-i18n="gallery.graduations">Graduaciones</button>
         </div>
       </div>
 
       <div id="gallery" class="grid">
-        <p class="loading-message">Cargando galería...</p>
+        <p class="loading-message" data-i18n="gallery.loading">Cargando galería...</p>
       </div>
     </div>
   </section>
@@ -64,7 +68,7 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-wrap">
-      <p>© <span id="year"></span> Beautiful Invitations. Because every celebration deserves a Beautiful Invitation.</p>
+      <p>© <span id="year"></span> Beautiful Invitations. <span data-i18n="footer.tagline">Because every celebration deserves a Beautiful Invitation.</span></p>
       <a class="to-top" href="#portfolio" aria-label="Volver arriba">↑</a>
     </div>
   </footer>
