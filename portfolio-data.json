@@ -19,7 +19,7 @@
       "type": "video",
       "path": "Bodas/boda de amelia y daniel.mp4",
       "description": "Diseño clásico y elegante"
-    }
+    },
      {
       "title": "Boda",
       "type": "link",
@@ -47,7 +47,7 @@
       "type": "image",
       "path": "Graduaciones/ejemplo1.jpg",
       "description": "Diseño profesional y moderno"
-    },
+    }
    
   ]
 }
