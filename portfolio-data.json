@@ -19,6 +19,12 @@
       "type": "video",
       "path": "Bodas/boda de amelia y daniel.mp4",
       "description": "Diseño clásico y elegante"
+    }
+     {
+      "title": "Boda",
+      "type": "link",
+      "path": "https://bodadegabrielylinda.my.canva.site/",
+      "description": "Boda de Gabriel y Linda"
     },
     {
       "title": "Invitación PDF Imprimible",
@@ -42,11 +48,6 @@
       "path": "Graduaciones/ejemplo1.jpg",
       "description": "Diseño profesional y moderno"
     },
-    {
-      "title": "Sitio Web Interactivo",
-      "type": "link",
-      "path": "https://ejemplo.com/graduacion",
-      "description": "Invitación web interactiva"
-    }
+   
   ]
 }
